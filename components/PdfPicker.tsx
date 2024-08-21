@@ -3,6 +3,7 @@ import {StyleSheet, Text, TouchableOpacity, View, Alert} from 'react-native';
 import DocumentPicker from 'react-native-document-picker';
 import axios from 'axios';
 import Tts from 'react-native-tts';
+import {apiUrl} from '../utlis/api';
 
 const PdfPicker = () => {
   const [pickedFile, setpickedFile] = useState<any>(null);
@@ -27,7 +28,6 @@ const PdfPicker = () => {
       });
 
       // Replace with your API URL
-      const apiUrl = 'http://10.0.2.2:4000/get-text';
 
       const response = await axios.post(apiUrl, formData, {
         headers: {
